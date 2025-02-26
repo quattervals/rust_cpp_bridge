@@ -3,8 +3,6 @@
 #include <string>
 #include <memory>
 
-#include "rust/cxx.h"
-
 namespace prs {
 
 class Person
