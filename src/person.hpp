@@ -3,7 +3,7 @@
 #include <string>
 #include <memory>
 
-namespace prs {
+namespace prs{
 
 class Person
 {
@@ -12,8 +12,9 @@ class Person
 
     uint32_t getAge() const;
     const std::string& getZip() const;
-
     void updateZip(const std::string& zip);
+
+    static std::unique_ptr<Person> newPerson(const std::string& name, const std::string& zip, uint32_t dob);
 
   private:
     std::string name;
@@ -21,6 +22,4 @@ class Person
     uint32_t dob;
     uint32_t id;
 };
-
-std::unique_ptr<Person> newPerson(const std::string& name, const std::string& zip, uint32_t dob);
 }

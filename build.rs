@@ -1,10 +1,16 @@
-fn main() {
-    cxx_build::bridge("src/main.rs")
-        .file("src/person.cpp")
-        .std("c++20")
-        .compile("cxx-rust-cpp-integration");
+fn main() -> miette::Result<()> {
 
-    println!("cargo::rerun-if-changed=src/main.rs");
-    println!("cargo::rerun-if-changed=src/person.cpp");
-    println!("cargo::rerun-if-changed=include/person.hpp");
+    // This assumes all your C++ bindings are in main.rs
+    let mut b = autocxx_build::Builder::new("src/main.rs", &[&"src"])
+        .build()
+        .unwrap();
+
+    b.flag_if_supported("-std=c++20")
+        .file("src/person.cpp")
+        .compile("autocxx-rust-cpp-integration");
+
+     println!("cargo:rerun-if-changed=src/person.hpp");
+     println!("cargo:rerun-if-changed=src/person.cpp");
+
+    Ok(())
 }

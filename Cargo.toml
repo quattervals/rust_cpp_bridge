@@ -5,15 +5,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# chrono = "0.4.39"
+autocxx = "0.28.0"
 cxx = "1.0"
 
 [build-dependencies]
-cxx-build = "1.0"
-
-# [lib]
-# name = "person_bridge_rs"
-# crate-type = ["staticlib"]
+autocxx-build = "0.28.0"
+miette = { version = "7.5.0", features = ["fancy"] }
 
 [target.aarch64-unknown-linux-gnu]
 linker = "aarch64-linux-gnu-gcc"
