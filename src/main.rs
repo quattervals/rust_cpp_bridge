@@ -1,5 +1,5 @@
-use cxx::let_cxx_string;
 use autocxx::prelude::*;
+use cxx::let_cxx_string;
 
 include_cpp! {
     #include "person.hpp"
