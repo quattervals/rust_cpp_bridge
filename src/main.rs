@@ -9,7 +9,7 @@ include_cpp! {
 }
 
 fn main() {
-    let_cxx_string!(some_person = "Susi Bluemli");
+    let_cxx_string!(some_person = "Susi Blüemli");
     let_cxx_string!(some_zip = "698");
     let mut _person2 = ffi::prs::Person::newPerson(&some_person, &some_zip, 1960);
 
