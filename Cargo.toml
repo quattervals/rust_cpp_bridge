@@ -1,5 +1,5 @@
 [package]
-name = "rust-with-cpp"
+name = "demo"
 authors = ["Oliver With"]
 version = "0.1.0"
 edition = "2021"

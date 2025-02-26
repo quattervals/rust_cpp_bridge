@@ -5,6 +5,8 @@
 
 #include "rust/cxx.h"
 
+namespace prs {
+
 class Person
 {
   public:
@@ -15,11 +17,12 @@ class Person
 
     void updateZip(const std::string& zip);
 
-    static std::unique_ptr<Person> newPerson(const std::string& name, const std::string& zip, uint32_t dob);
-
   private:
     std::string name;
     std::string zip;
     uint32_t dob;
     uint32_t id;
 };
+
+std::unique_ptr<Person> newPerson(const std::string& name, const std::string& zip, uint32_t dob);
+}
