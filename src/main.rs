@@ -5,11 +5,12 @@ mod ffi {
 
     // C++ types and signatures exposed to Rust.
     unsafe extern "C++" {
-        include!("rust-cpp-integration/include/person.hpp");
+        include!("person.hpp");
 
         type Person;
 
         fn newPerson(name: &CxxString, zip: &CxxString, dob: u32) -> UniquePtr<Person>;
+
 
         fn getAge(self: &Person) -> u32;
         fn getZip(self: &Person) -> &CxxString;
