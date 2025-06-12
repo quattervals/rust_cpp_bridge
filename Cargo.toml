@@ -2,16 +2,15 @@
 name = "rust-cpp-integration"
 authors = ["Oliver With"]
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 build="build.rs"
 
 [dependencies]
-
-cxx = "1.0"
+cxx = "1.0.158"
 
 [build-dependencies]
-cxx-build = "1.0"
-cmake = "0.1"
+cxx-build = "1.0.158"
+cmake = "0.1.54"
 
 
 

@@ -1,4 +1,4 @@
-use cxx::{let_cxx_string, UniquePtr};
+use cxx::{UniquePtr, let_cxx_string};
 
 #[cxx::bridge(namespace = "prs")]
 mod ffi {
@@ -17,7 +17,7 @@ mod ffi {
 }
 
 /// A Rust wrapper for the C++ Person class that provides a clean, idiomatic API
-pub struct Person {
+struct Person {
     inner: UniquePtr<ffi::Person>,
 }
 
